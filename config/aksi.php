@@ -14,6 +14,9 @@ return [
     // MFA wajib bagi semua pengguna. Bisa dimatikan sementara untuk demo lokal.
     'mfa_required' => (bool) env('AKSI_MFA_REQUIRED', true),
 
+    // Halaman instalasi web (/install). Hanya aktif di paket siap-upload sampai instalasi selesai.
+    'installer' => (bool) env('AKSI_INSTALLER', false),
+
     // Kirim juga notifikasi lewat email (isi email tidak memuat isi rahasia).
     'notify_mail' => (bool) env('AKSI_NOTIFY_MAIL', false),
 
