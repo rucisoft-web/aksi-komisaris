@@ -1,0 +1,51 @@
+<?php
+
+// Pesan validasi umum dalam Bahasa Indonesia. Aturan yang tidak tercantum memakai bahasa Inggris.
+return [
+    'accepted' => ':Attribute harus disetujui.',
+    'after' => ':Attribute harus tanggal setelah :date.',
+    'after_or_equal' => ':Attribute harus tanggal setelah atau sama dengan :date.',
+    'before' => ':Attribute harus tanggal sebelum :date.',
+    'before_or_equal' => ':Attribute harus tanggal sebelum atau sama dengan :date.',
+    'boolean' => ':Attribute harus benar atau salah.',
+    'confirmed' => 'Konfirmasi :attribute tidak cocok.',
+    'current_password' => 'Kata sandi salah.',
+    'date' => ':Attribute bukan tanggal yang valid.',
+    'email' => ':Attribute harus alamat email yang valid.',
+    'exists' => ':Attribute yang dipilih tidak valid.',
+    'file' => ':Attribute harus berupa berkas.',
+    'image' => ':Attribute harus berupa gambar.',
+    'in' => ':Attribute yang dipilih tidak valid.',
+    'integer' => ':Attribute harus bilangan bulat.',
+    'max' => [
+        'numeric' => ':Attribute maksimal :max.',
+        'file' => ':Attribute maksimal :max kilobyte.',
+        'string' => ':Attribute maksimal :max karakter.',
+        'array' => ':Attribute maksimal :max item.',
+    ],
+    'mimes' => ':Attribute harus berkas bertipe: :values.',
+    'mimetypes' => ':Attribute harus berkas bertipe: :values.',
+    'min' => [
+        'numeric' => ':Attribute minimal :min.',
+        'file' => ':Attribute minimal :min kilobyte.',
+        'string' => ':Attribute minimal :min karakter.',
+        'array' => ':Attribute minimal :min item.',
+    ],
+    'numeric' => ':Attribute harus berupa angka.',
+    'password' => [
+        'letters' => ':Attribute harus memuat huruf.',
+        'mixed' => ':Attribute harus memuat huruf besar dan kecil.',
+        'numbers' => ':Attribute harus memuat angka.',
+        'symbols' => ':Attribute harus memuat simbol.',
+        'uncompromised' => ':Attribute ini pernah bocor di internet. Gunakan yang lain.',
+    ],
+    'required' => ':Attribute wajib diisi.',
+    'required_if' => ':Attribute wajib diisi bila :other adalah :value.',
+    'same' => ':Attribute dan :other harus sama.',
+    'string' => ':Attribute harus berupa teks.',
+    'unique' => ':Attribute sudah dipakai.',
+    'uploaded' => ':Attribute gagal diunggah.',
+    'url' => ':Attribute harus URL yang valid.',
+
+    'attributes' => [],
+];

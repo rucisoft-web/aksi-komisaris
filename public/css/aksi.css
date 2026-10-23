@@ -1,0 +1,90 @@
+/*
+ * Gaya tambahan AKSI Komisaris.
+ * Ditulis tangan karena server cPanel tidak menjalankan build Tailwind.
+ * Memakai variabel warna Filament (--primary-600, --danger-600, dst.).
+ */
+
+/* Tata letak halaman khusus */
+.aksi-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 1024px) {
+    .aksi-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .aksi-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .aksi-span-2 { grid-column: span 2 / span 2; }
+}
+.aksi-stack > * + * { margin-top: 1rem; }
+.aksi-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.aksi-card {
+    display: block; padding: .75rem .875rem; margin-bottom: .5rem;
+    border: 1px solid rgba(0, 0, 0, .07); border-radius: .625rem;
+    color: inherit; text-decoration: none; transition: background-color .15s;
+}
+a.aksi-card:hover { background: rgba(0, 0, 0, .03); }
+.dark .aksi-card { border-color: rgba(255, 255, 255, .1); }
+.dark a.aksi-card:hover { background: rgba(255, 255, 255, .04); }
+.aksi-meta { display: block; margin-top: .25rem; font-size: .8125rem; color: rgb(107 114 128); }
+.aksi-muted { font-size: .875rem; color: rgb(107 114 128); }
+.dark .aksi-meta, .dark .aksi-muted { color: rgb(156 163 175); }
+.aksi-danger { display: block; margin-top: .25rem; font-size: .8125rem; color: var(--danger-600, #dc2626); }
+.aksi-link { color: var(--primary-600, #2563eb); text-decoration: underline; text-underline-offset: 3px; }
+.aksi-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.aksi-table th, .aksi-table td { padding: .5rem .625rem; border-bottom: 1px solid rgba(0, 0, 0, .07); text-align: left; vertical-align: top; }
+.aksi-table th { font-weight: 600; color: rgb(75 85 99); }
+.dark .aksi-table th, .dark .aksi-table td { border-color: rgba(255, 255, 255, .1); }
+.dark .aksi-table th { color: rgb(209 213 219); }
+.aksi-disclaimer { padding: .75rem 1rem; text-align: center; font-size: .75rem; color: rgb(107 114 128); }
+
+/* Utilitas mirip Tailwind yang dipakai di tampilan AI */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-col { flex-direction: column; }
+.flex-1 { flex: 1 1 0%; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.gap-1 { gap: .25rem; } .gap-2 { gap: .5rem; } .gap-3 { gap: .75rem; } .gap-4 { gap: 1rem; }
+.space-y-1 > * + * { margin-top: .25rem; } .space-y-3 > * + * { margin-top: .75rem; } .space-y-4 > * + * { margin-top: 1rem; }
+.mt-1 { margin-top: .25rem; } .mt-2 { margin-top: .5rem; } .mt-4 { margin-top: 1rem; } .mt-6 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: .25rem; } .mb-2 { margin-bottom: .5rem; } .mb-3 { margin-bottom: .75rem; } .mb-4 { margin-bottom: 1rem; }
+.ml-1 { margin-left: .25rem; }
+.p-2 { padding: .5rem; } .p-6 { padding: 1.5rem; }
+.px-2 { padding-left: .5rem; padding-right: .5rem; }
+.py-0\.5 { padding-top: .125rem; padding-bottom: .125rem; }
+.py-1 { padding-top: .25rem; padding-bottom: .25rem; }
+.pb-3 { padding-bottom: .75rem; }
+.ps-5 { padding-inline-start: 1.25rem; }
+.h-5 { height: 1.25rem; } .w-5 { width: 1.25rem; } .w-full { width: 100%; }
+.max-h-\[60vh\] { max-height: 60vh; }
+.overflow-y-auto { overflow-y: auto; }
+.rounded { border-radius: .25rem; } .rounded-full { border-radius: 9999px; }
+.border { border: 1px solid rgba(0, 0, 0, .1); }
+.border-b { border-bottom: 1px solid rgba(0, 0, 0, .07); }
+.border-gray-100 { border-color: rgb(243 244 246); }
+.dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, .1); }
+.text-xs { font-size: .75rem; line-height: 1rem; }
+.text-sm { font-size: .875rem; line-height: 1.25rem; }
+.text-left { text-align: left; } .text-right { text-align: right; }
+.font-medium { font-weight: 500; } .font-semibold { font-weight: 600; }
+.whitespace-pre-wrap { white-space: pre-wrap; }
+.list-disc { list-style: disc; }
+.underline { text-decoration: underline; }
+.text-gray-500 { color: rgb(107 114 128); }
+.text-primary-600 { color: var(--primary-600); } .text-primary-700 { color: var(--primary-700); }
+.text-danger-600 { color: var(--danger-600); } .text-danger-700 { color: var(--danger-700); }
+.text-info-700 { color: var(--info-700); }
+.bg-white { background: #fff; } .bg-gray-50 { background: rgb(249 250 251); }
+.bg-primary-50 { background: var(--primary-50); } .bg-danger-50 { background: var(--danger-50); } .bg-info-50 { background: var(--info-50); }
+.dark .dark\:bg-primary-500\/20 { background: color-mix(in oklab, var(--primary-500) 20%, transparent); }
+.dark .dark\:bg-white\/5 { background: rgba(255, 255, 255, .05); }
+.dark .dark\:text-primary-300 { color: var(--primary-300); }
+@media (min-width: 1024px) {
+    .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .lg\:col-span-2 { grid-column: span 2 / span 2; }
+    .lg\:col-span-3 { grid-column: span 3 / span 3; }
+    .lg\:sticky { position: sticky; } .lg\:top-20 { top: 5rem; }
+}
+td.aksi-danger { display: table-cell; margin-top: 0; font-size: inherit; font-weight: 600; }
+.shrink-0 { flex-shrink: 0; }
