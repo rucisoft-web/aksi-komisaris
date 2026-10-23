@@ -4,6 +4,23 @@ Panduan ini untuk hosting cPanel biasa (shared hosting atau VPS dengan cPanel). 
 
 Contoh di panduan memakai akun cPanel `userku`, folder program `/home/userku/aksi-komisaris`, dan alamat `https://aksi.domainanda.com`. Sesuaikan dengan milik Anda.
 
+## 0. Cara tercepat: paket siap-upload (tanpa Terminal, tanpa edit file)
+
+1. Buat database di cPanel › **MySQL Databases** (database, user, lalu *Add User To Database* dengan ALL PRIVILEGES). Catat nama database, user, dan kata sandinya.
+2. *File Manager* › buka folder tujuan, lalu **Upload** `aksi-komisaris-siap-upload.zip`. Folder tujuan bisa:
+   - `public_html` (domain utama), atau
+   - folder document root subdomain, misalnya `public_html/aksi` untuk `aksi.domainanda.com`.
+3. Klik kanan zip › **Extract** di folder itu juga, lalu hapus zip-nya.
+4. Buka alamat situs di browser. Halaman **Instalasi AKSI Komisaris** muncul otomatis.
+5. Isi data database, email dan kata sandi admin, lalu centang *Muat data demo* bila untuk promosi. Klik **Pasang sekarang**.
+6. Ikuti petunjuk di layar selesai: tambahkan satu cron *Once Per Minute* (perintahnya ditampilkan lengkap dengan path folder Anda). Bila hosting tidak menyediakan cron, centang *Hosting saya tidak bisa memakai cron* saat instalasi.
+
+Halaman instalasi otomatis mati setelah berhasil. File `.htaccess` di akar paket meneruskan semua permintaan ke folder `public`, jadi `.env`, `storage`, dan `vendor` tidak bisa dibuka dari browser walaupun diekstrak langsung ke `public_html`.
+
+Pastikan PHP domain sudah 8.3 (*MultiPHP Manager*) sebelum membuka alamat situs. Halaman instalasi menampilkan daftar pemeriksaan server (versi PHP, ekstensi, izin folder) dan tidak bisa dilanjutkan sebelum semuanya ✓.
+
+Langkah 1–8 di bawah adalah cara manual (Terminal/Git), tidak diperlukan bila memakai paket siap-upload.
+
 ## 1. Prasyarat hosting
 
 | Komponen | Ketentuan | Tempat di cPanel |

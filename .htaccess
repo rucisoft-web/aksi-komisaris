@@ -1,11 +1,15 @@
-# Pengaman bila seluruh folder program terlanjur diekstrak ke public_html:
-# arahkan semua permintaan ke folder public, dan tolak akses ke file lain (.env, storage, vendor).
+# Pengaman bila seluruh folder program diekstrak langsung ke public_html:
+# semua permintaan diteruskan ke folder public, sehingga .env, storage, dan vendor tidak pernah tersaji.
+<IfModule mod_dir.c>
+    DirectorySlash Off
+</IfModule>
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^(\.env|\.git|storage|vendor|database|config|app|bootstrap|routes|tests)(/|$) - [F,L]
+    RewriteRule ^\.(env|git) - [F,L]
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
-<Files ".env">
+<FilesMatch "^\.env">
     Require all denied
-</Files>
+</FilesMatch>
